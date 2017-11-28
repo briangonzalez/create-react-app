@@ -1,5 +1,7 @@
 🚨 A custom CRA which essentially has only changed what's inside of [packages/react-scripts](tree/master/packages/react-scripts). 🚨
 
+Published to NPM: https://www.npmjs.com/package/@briangonzalez/react-scripts-on-roids
+
 ------
 
 # Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
