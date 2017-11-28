@@ -27,7 +27,7 @@ exports.sourceMap = {
 
 exports.typeScript = {
   test: /\.tsx?$/,
-  loader: 'ts-loader',
+  loader: 'awesome-typescript-loader',
 };
 
 exports.cssModules = {
