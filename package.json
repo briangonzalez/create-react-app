@@ -13,8 +13,7 @@
     "start": "node packages/react-scripts/scripts/start.js",
     "test": "node packages/react-scripts/scripts/test.js --env=jsdom",
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-    "precommit": "lint-staged",
-    "react-scripts-on-roids": "packages/react-scripts/bin/react-scripts.js"
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "eslint": "^4.4.1",
@@ -32,8 +31,5 @@
     "yarn.lock": [
       "git rm --cached"
     ]
-  },
-  "bin": {
-    "react-scripts-on-roids": "packages/react-scripts/bin/react-scripts.js"
   }
 }
