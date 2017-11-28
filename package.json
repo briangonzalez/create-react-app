@@ -1,4 +1,6 @@
 {
+  "name": "react-scripts-on-roids",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "node packages/react-scripts/scripts/build.js",
@@ -11,7 +13,8 @@
     "start": "node packages/react-scripts/scripts/start.js",
     "test": "node packages/react-scripts/scripts/test.js --env=jsdom",
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "react-scripts-on-roids": "packages/react-scripts/bin/react-scripts.js"
   },
   "devDependencies": {
     "eslint": "^4.4.1",
@@ -29,5 +32,8 @@
     "yarn.lock": [
       "git rm --cached"
     ]
+  },
+  "bin": {
+    "react-scripts-on-roids": "packages/react-scripts/bin/react-scripts.js"
   }
 }
