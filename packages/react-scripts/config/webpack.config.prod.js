@@ -215,11 +215,12 @@ module.exports = {
           // in development "style" loader enables hot editing of CSS.
           {
             test: /\.css$/,
-            use: [
-              require.resolve('style-loader'),
-              loaders.cssModules,
-              loaders.postcss,
-            ],
+            use: ExtractTextPlugin.extract(
+              Object.assign({
+                fallback: require.resolve('style-loader'),
+                use: [loaders.cssModules, loaders.postcss],
+              })
+            ),
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
