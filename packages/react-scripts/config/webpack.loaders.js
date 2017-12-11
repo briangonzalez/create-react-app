@@ -4,15 +4,22 @@ exports.postcss = {
   loader: require.resolve('postcss-loader'),
   options: {
     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-    plugins: () => [
-      require('postcss-flexbugs-fixes'),
-      require('postcss-cssnext')(),
-    ],
+    options: {
+      // Necessary for external CSS imports to work
+      // https://github.com/facebookincubator/create-react-app/issues/2677
+      ident: 'postcss',
+      plugins: () => [
+        require('postcss-flexbugs-fixes'),
+        require('postcss-import'),
+        require('postcss-cssnext'),
+        require('postcss-mixins'),
+      ],
+    },
   },
 };
 
 exports.svg = {
-  test: /\.svg$/,
+  test: /\.component\.svg$/,
   loader: 'svg-react-loader',
   query: {
     classIdPrefix: '[name]-[hash:8]__',
