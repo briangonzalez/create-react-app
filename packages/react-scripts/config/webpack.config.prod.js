@@ -23,6 +23,8 @@ const getClientEnvironment = require('./env');
 
 const loaders = require('./webpack.loaders');
 
+const { CheckerPlugin } = require('awesome-typescript-loader');
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
@@ -244,6 +246,10 @@ module.exports = {
     ],
   },
   plugins: [
+    // `CheckerPlugin` is optional. Use it if you want async error reporting.
+    // We need this plugin to detect a `--watch` mode. It may be removed later
+    // after https://github.com/webpack/webpack/issues/3460 will be resolved.
+    new CheckerPlugin(),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
