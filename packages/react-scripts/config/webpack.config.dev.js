@@ -165,6 +165,7 @@ module.exports = {
           loaders.svg,
           loaders.typeScript,
           loaders.sourceMap,
+          loaders.sass,
 
           // "url" loader works like "file" loader except that it embeds assets
           // smaller than specified limit in bytes as data URLs to avoid requests.

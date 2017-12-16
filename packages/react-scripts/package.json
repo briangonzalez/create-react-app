@@ -1,6 +1,6 @@
 {
   "name": "@briangonzalez/react-scripts-on-roids",
-  "version": "1.0.33",
+  "version": "1.0.9",
   "description": "Configuration and scripts for Create React App.",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -45,6 +45,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "node-sass": "^4.7.2",
     "object-assign": "4.1.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-flexbugs-fixes": "^3.2.0",
@@ -54,6 +55,7 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react-dev-utils": "^4.2.1",
+    "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.0",
     "svg-react-loader": "^0.4.5",

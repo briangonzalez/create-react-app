@@ -1,5 +1,8 @@
 'use strict';
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { resolve } = require('path');
+
 exports.postcss = {
   loader: require.resolve('postcss-loader'),
   options: {
@@ -45,4 +48,36 @@ exports.cssModules = {
     sourceMap: true,
     localIdentName: '[name]__[local]___[hash:base64:5]',
   },
+};
+
+exports.sass = {
+  test: /\.scss$/,
+  use: [
+    require.resolve('style-loader'),
+    require.resolve('css-loader'),
+    {
+      loader: require.resolve('sass-loader'),
+      options: {
+        sassIncludePaths: [resolve('node_modules')],
+      },
+    },
+  ],
+};
+
+exports.productionSass = {
+  test: /\.scss$/,
+  use: ExtractTextPlugin.extract(
+    Object.assign({
+      fallback: require.resolve('style-loader'),
+      use: [
+        require.resolve('css-loader'),
+        {
+          loader: require.resolve('sass-loader'),
+          options: {
+            sassIncludePaths: [resolve('node_modules')],
+          },
+        },
+      ],
+    })
+  ),
 };
