@@ -1,6 +1,6 @@
 {
   "name": "@briangonzalez/react-scripts-on-roids",
-  "version": "1.0.10",
+  "version": "1.0.15",
   "description": "Configuration and scripts for Create React App.",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -49,8 +49,10 @@
     "object-assign": "4.1.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-for": "^2.1.1",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
+    "postcss-media-minmax": "^3.0.0",
     "postcss-mixins": "^6.2.0",
     "promise": "8.0.1",
     "raf": "3.4.0",

@@ -7,17 +7,14 @@ exports.postcss = {
   loader: require.resolve('postcss-loader'),
   options: {
     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-    options: {
-      // Necessary for external CSS imports to work
-      // https://github.com/facebookincubator/create-react-app/issues/2677
-      ident: 'postcss',
-      plugins: () => [
-        require('postcss-flexbugs-fixes'),
-        require('postcss-import'),
-        require('postcss-cssnext'),
-        require('postcss-mixins'),
-      ],
-    },
+    plugins: () => [
+      require('postcss-flexbugs-fixes'),
+      require('postcss-import'),
+      require('postcss-cssnext'),
+      require('postcss-mixins'),
+      require('postcss-for'),
+      require('postcss-media-minmax'),
+    ],
   },
 };
 
@@ -45,6 +42,16 @@ exports.cssModules = {
   options: {
     importLoaders: 1,
     modules: true,
+    sourceMap: true,
+    localIdentName: '[name]__[local]___[hash:base64:5]',
+  },
+};
+
+exports.cssNoModules = {
+  loader: require.resolve('css-loader'),
+  options: {
+    importLoaders: 1,
+    modules: false,
     sourceMap: true,
     localIdentName: '[name]__[local]___[hash:base64:5]',
   },

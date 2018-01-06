@@ -135,6 +135,7 @@ module.exports = {
   },
   module: {
     strictExportPresence: true,
+    exclude: /node_modules/,
     rules: [
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
@@ -217,11 +218,20 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.module\.css$/,
             use: ExtractTextPlugin.extract(
               Object.assign({
                 fallback: require.resolve('style-loader'),
                 use: [loaders.cssModules, loaders.postcss],
+              })
+            ),
+          },
+          {
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract(
+              Object.assign({
+                fallback: require.resolve('style-loader'),
+                use: [loaders.cssNoModules, loaders.postcss],
               })
             ),
           },
